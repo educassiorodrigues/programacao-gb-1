@@ -2,6 +2,11 @@
 
 Neste projeto foi desenvolvido o esqueleto de uma petshop utilizando o paradigma de orientação a objetivos.
 
+## Dependencias 
+- Java JDK 17 LTS
+- Nivel da Linguagem:17 LTS
+
+
 ## Issues
 
 - Dentro da pasta issues você encontrará o diagrama UML das classes apresentadas.
