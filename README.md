@@ -53,17 +53,17 @@ Neste projeto foi desenvolvido o esqueleto de uma petshop utilizando o paradigma
 
 ```java
     Cliente cassio=new Cliente("Cássio","34104111007");
-    cassio.withEndereco(new Endereco("Coronel alvaro de moraes",1115,"fundos","centro","Montenegro","Brasil"));
-    cassio.adicionarPet(jade);
-    Cliente moacir=new Cliente("Moacir","34104111007");
-    moacir.withEndereco("Antonio alvaro das flores",1115,null,"centro","Jacaranda","Brasil");
-    List<Cliente> clientesDeCoronelAlvaroDeMoraes=uniPet.buscarPorEnderecoLogradouro("Coronel alvaro de moraes");
+        cassio.withEndereco(new Endereco("Coronel alvaro de moraes",1115,"fundos","centro","Montenegro","Brasil"));
+        cassio.adicionarPet(jade);
+        Cliente moacir=new Cliente("Moacir","34104111007");
+        moacir.withEndereco("Antonio alvaro das flores",1115,null,"centro","Jacaranda","Brasil");
+        List<Cliente> clientesDeCoronelAlvaroDeMoraes=uniPet.buscarPorEnderecoLogradouro("Coronel alvaro de moraes");
 
-    for(Cliente cliente:clientesDeCoronelAlvaroDeMoraes){
+        for(Cliente cliente:clientesDeCoronelAlvaroDeMoraes){
         System.out.println("nome:"+cliente.getNome()+" Cidade: "+cliente.getEndereco().getLogradouro());
         // retorno: nome:Cássio Cidade: Coronel alvaro de moraes
-    }
-    
+        }
+
 ```
 
 - Remover Cliente por Documento
@@ -123,6 +123,7 @@ Neste projeto foi desenvolvido o esqueleto de uma petshop utilizando o paradigma
   ```
 
 #### Estoque
+
 - Adicionar e Listar:
   ```java
     PetShop uniPet = new PetShop("UniPet", "62119615000199");

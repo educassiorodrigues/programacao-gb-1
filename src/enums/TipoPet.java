@@ -7,11 +7,11 @@ public enum TipoPet {
 
     private final int valor;
 
-    TipoPet(int valorOpcao){
+    TipoPet(int valorOpcao) {
         valor = valorOpcao;
     }
 
-    public int getValor(){
+    public int getValor() {
         return valor;
     }
 }

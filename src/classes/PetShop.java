@@ -9,41 +9,42 @@ import java.util.List;
 import static java.util.Objects.isNull;
 
 public class PetShop {
+    public Estoque estoque;
     private String nome;
     private String cnpj;
     private List<Funcionario> funcionarios;
     private List<Cliente> clientes;
     private List<Pet> pets;
-    public Estoque estoque;
+
     public PetShop(String nome, String cnpj) {
         this.nome = nome;
         this.cnpj = cnpj;
-        this.funcionarios = new ArrayList<Funcionario>();
-        this.clientes = new ArrayList<Cliente>();
-        this.pets = new ArrayList<Pet>();
+        this.funcionarios = new ArrayList<>();
+        this.clientes = new ArrayList<>();
+        this.pets = new ArrayList<>();
         this.estoque = new Estoque();
     }
 
     public void adicionarCliente(Cliente cliente) {
         this.clientes.add(cliente);
-        if(cliente.getPets().size() > 0){
+        if (cliente.getPets().size() > 0) {
             this.pets.addAll(cliente.getPets());
         }
     }
 
-    public List<Pet> buscarPetsPorTipo(TipoPet tipoPet){
+    public List<Pet> buscarPetsPorTipo(TipoPet tipoPet) {
         return this.pets.stream().filter(_pet -> _pet.getTipoPet().equals(tipoPet)).toList();
     }
 
-    public List<Cliente> buscarPorEnderecoCidade(String cidade){
+    public List<Cliente> buscarPorEnderecoCidade(String cidade) {
         return this.clientes.stream().filter(_cliente -> _cliente.getEndereco().getCidade().equals(cidade)).toList();
     }
 
-    public List<Cliente> buscarPorEnderecoLogradouro(String logradouro){
+    public List<Cliente> buscarPorEnderecoLogradouro(String logradouro) {
         return this.clientes.stream().filter(_cliente -> _cliente.getEndereco().getLogradouro().equals(logradouro)).toList();
     }
 
-    public List<Funcionario> buscaFuncionarioPorSalario(BigDecimal min, BigDecimal max){
+    public List<Funcionario> buscaFuncionarioPorSalario(BigDecimal min, BigDecimal max) {
         return this.funcionarios.stream().filter(_funcionario -> (_funcionario.getSalario().compareTo(min) >= 0) && (_funcionario.getSalario().compareTo(max) <= 0)).toList();
     }
 

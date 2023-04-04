@@ -6,11 +6,11 @@ public enum TipoFuncionario {
 
     private final int valor;
 
-    TipoFuncionario(int valorOpcao){
+    TipoFuncionario(int valorOpcao) {
         valor = valorOpcao;
     }
 
-    public int getValor(){
+    public int getValor() {
         return valor;
     }
 }

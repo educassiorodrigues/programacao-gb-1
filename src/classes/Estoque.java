@@ -15,9 +15,10 @@ public class Estoque {
     public void adicionarProduto(Produto produto) {
         this.produtos.add(produto);
     }
-    public boolean removerProdutoPorNome(String nome){
+
+    public boolean removerProdutoPorNome(String nome) {
         Produto produto = this.produtos.stream().filter(_produto -> _produto.getNome().equals(nome)).findFirst().orElse(null);
-        if(isNull(produto)){
+        if (isNull(produto)) {
             return false;
         }
 
