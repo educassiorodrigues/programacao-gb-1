@@ -32,11 +32,21 @@ public class Main {
         uniPet.adicionarFuncionario(jorge);
         uniPet.adicionarFuncionario(matheus);
 
-        List<Cliente> clientesDeCoronelAlvaroDeMoraes = uniPet.buscarPorEnderecoLogradouro("Coronel alvaro de moraes");
+        uniPet.estoque.adicionarProduto(new Produto("Shampoo", new BigDecimal("20.00"), "Shampo pra cachorro"));
+        uniPet.estoque.adicionarProduto(new Produto("Condicionador", new BigDecimal("18.00"), "Condicionador pra cachorro"));
 
-        for (Cliente cliente : clientesDeCoronelAlvaroDeMoraes) {
-            System.out.println("nome:" + cliente.getNome() + " Cidade: " + cliente.getEndereco().getLogradouro());
+        uniPet.estoque.removerProdutoPorNome("Shampoo");
+
+        List<Produto> produtosEmEstoque = uniPet.estoque.getProdutos();
+        for (Produto produto : produtosEmEstoque) {
+            System.out.println("Nome: " + produto.getNome() + " Descrição " + produto.getDescricao());
         }
+
+//        List<Cliente> clientesDeCoronelAlvaroDeMoraes = uniPet.buscarPorEnderecoLogradouro("Coronel alvaro de moraes");
+//
+//        for (Cliente cliente : clientesDeCoronelAlvaroDeMoraes) {
+//            System.out.println("nome:" + cliente.getNome() + " Cidade: " + cliente.getEndereco().getLogradouro());
+//        }
 
 //        List<Cliente> clientesDeMontenegro = uniPet.buscarPorEnderecoCidade("Montenegro");
 //        for (Cliente cliente : clientesDeMontenegro) {

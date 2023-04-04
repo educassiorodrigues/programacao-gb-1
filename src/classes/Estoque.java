@@ -24,4 +24,8 @@ public class Estoque {
         this.produtos.remove(produto);
         return true;
     }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
 }

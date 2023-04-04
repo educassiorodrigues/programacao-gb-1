@@ -122,3 +122,31 @@ Neste projeto foi desenvolvido o esqueleto de uma petshop utilizando o paradigma
     }
   ```
 
+#### Estoque
+- Adicionar e Listar:
+  ```java
+    PetShop uniPet = new PetShop("UniPet", "62119615000199");
+    uniPet.estoque.adicionarProduto(new Produto("Shampoo", new BigDecimal("20.00"), "Shampo pra cachorro"));
+    uniPet.estoque.adicionarProduto(new Produto("Condicionador", new BigDecimal("18.00"), "Condicionador pra cachorro"));
+    List<Produto> produtosEmEstoque = uniPet.estoque.getProdutos();
+    for (Produto produto : produtosEmEstoque) {
+        System.out.println("Nome: " + produto.getNome() + " Descrição " + produto.getDescricao());
+        //retorno: Nome: Shampoo Descrição Shampo pra cachorro
+        //         Nome: Condicionador DescriçãoCondicionador pra cachorro
+    }
+  ```
+
+- Remover por nome:
+  ```java
+    uniPet.estoque.adicionarProduto(new Produto("Shampoo", new BigDecimal("20.00"), "Shampo pra cachorro"));
+    uniPet.estoque.adicionarProduto(new Produto("Condicionador", new BigDecimal("18.00"), "Condicionador pra cachorro"));
+
+    uniPet.estoque.removerProdutoPorNome("Shampoo");
+
+    List<Produto> produtosEmEstoque = uniPet.estoque.getProdutos();
+    for (Produto produto : produtosEmEstoque) {
+        System.out.println("Nome: " + produto.getNome() + " Descrição " + produto.getDescricao());
+        // retorno: Nome: Condicionador Descrição Condicionador pra cachorro
+    }
+  ```
+
