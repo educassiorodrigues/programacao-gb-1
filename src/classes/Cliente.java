@@ -42,4 +42,8 @@ public class Cliente {
     public Endereco getEndereco() {
         return endereco;
     }
+
+    public String getNome() {
+        return nome;
+    }
 }
